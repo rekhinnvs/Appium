@@ -15,16 +15,20 @@ import static java.time.Duration.ofSeconds;
 public class ApiDemos extends Base {
 
     static AndroidDriver<AndroidElement> driver;
+    TouchAction t;
     public static void main(String[] args) throws MalformedURLException {
 
         driver = ApiDemoCapabilities();
         driver.startActivity(new Activity("io.appium.android.apis","ApiDemos"));
 
         ApiDemos apiDemos = new ApiDemos();
-        apiDemos.longClick();
+        //apiDemos.longClick();
+        //apiDemos.swipeTime();
+        apiDemos.scrolling();
 
     }
 
+    //Long click on an object
     private void longClick() {
         driver.findElementByXPath("//android.widget.TextView[@text=\"Views\"]").click();
         driver.findElementByXPath("//android.widget.TextView[@text=\"Expandable Lists\"]").click();
@@ -40,5 +44,26 @@ public class ApiDemos extends Base {
         WebElement sampleMenu = driver.findElementByXPath("//android.widget.TextView[@text=\"Sample menu\"]");
         System.out.println(sampleMenu.isDisplayed());
 
+    }
+
+    //Change the time to 3:45 by swiping to 45
+    private void swipeTime() {
+        driver.findElementByXPath("//android.widget.TextView[@text=\"Views\"]").click();
+        driver.findElementByXPath("//android.widget.TextView[@text='Date Widgets']").click();
+        driver.findElementByXPath("//android.widget.TextView[@text='2. Inline']").click();
+        driver.findElementByXPath("//*[@content-desc='3']").click();
+
+        WebElement min15 = driver.findElementByXPath("//*[@content-desc='25']");
+        WebElement min45 = driver.findElementByXPath("//*[@content-desc='45']");
+
+        t = new TouchAction(driver);
+        t.longPress(longPressOptions().withElement(element(min15)).withDuration(ofSeconds(1)))
+                .moveTo(element(min45)).release().perform();
+    }
+
+    private void scrolling() {
+        driver.findElementByXPath("//android.widget.TextView[@text=\"Views\"]").click();
+        //WebElement webView = driver.findElementByXPath("//android.widget.TextView[@text='WebView']");
+        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"WebView\"))").click();
     }
 }
