@@ -10,3 +10,6 @@ Different ways of finding objects
      driver.findElementByClassName("android.widget.EditText").sendKeys("hello");
      driver.findElementsByClassName("android.widget.Button").get(1).click();
 
+By using AndroidUIAutomator
+
+    driver.findElementByAndroidUIAutomator("text(\"Alarm\")").click();
