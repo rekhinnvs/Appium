@@ -24,7 +24,8 @@ public class ApiDemos extends Base {
         ApiDemos apiDemos = new ApiDemos();
         //apiDemos.longClick();
         //apiDemos.swipeTime();
-        apiDemos.scrolling();
+        //apiDemos.scrolling();
+        apiDemos.drag();
 
     }
 
@@ -65,5 +66,18 @@ public class ApiDemos extends Base {
         driver.findElementByXPath("//android.widget.TextView[@text=\"Views\"]").click();
         //WebElement webView = driver.findElementByXPath("//android.widget.TextView[@text='WebView']");
         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"WebView\"))").click();
+
     }
+
+    private void drag() {
+        driver.findElementByXPath("//android.widget.TextView[@text=\"Views\"]").click();
+        driver.findElementByXPath("//android.widget.TextView[@text=\"Drag and Drop\"]").click();
+        WebElement start = driver.findElementById("io.appium.android.apis:id/drag_dot_1");
+        WebElement stop = driver.findElementById("io.appium.android.apis:id/drag_dot_3");
+        //WebElement start = driver.findElementByXPath("//android.view.View[@resource-id='io.appium.android.apis:id/drag_dot_1]")
+        t = new TouchAction(driver);
+        t.longPress(longPressOptions().withElement(element(start))).moveTo(element(stop)).release().perform();
+
+    }
+
 }
