@@ -59,4 +59,15 @@ public class Base {
         return driver;
 
     }
+
+    public static AndroidDriver<AndroidElement> BrowserCapabilities() throws MalformedURLException {
+
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability(MobileCapabilityType.DEVICE_NAME,"13d56a3c");
+        cap.setCapability(MobileCapabilityType.BROWSER_NAME,"Chrome");
+        AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
+        System.out.println("Driver initiated");
+        return driver;
+
+    }
 }

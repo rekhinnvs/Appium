@@ -76,7 +76,8 @@ public class ApiDemos extends Base {
         WebElement stop = driver.findElementById("io.appium.android.apis:id/drag_dot_3");
         //WebElement start = driver.findElementByXPath("//android.view.View[@resource-id='io.appium.android.apis:id/drag_dot_1]")
         t = new TouchAction(driver);
-        t.longPress(longPressOptions().withElement(element(start))).moveTo(element(stop)).release().perform();
+        //t.longPress(longPressOptions().withElement(element(start))).moveTo(element(stop)).release().perform(); this also works
+        t.longPress(element(start)).moveTo(element(stop)).release().perform();
 
     }
 
