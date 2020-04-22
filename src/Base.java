@@ -48,6 +48,7 @@ public class Base {
 
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(MobileCapabilityType.DEVICE_NAME,"13d56a3c");
+        cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
         //if the application is given as an apk file
         //File appDir = new File("jars");
         //File app = new File(appDir, "original.apk");
@@ -64,6 +65,7 @@ public class Base {
 
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(MobileCapabilityType.DEVICE_NAME,"13d56a3c");
+        cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
         cap.setCapability(MobileCapabilityType.BROWSER_NAME,"Chrome");
         AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
         System.out.println("Driver initiated");
