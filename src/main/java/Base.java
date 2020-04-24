@@ -1,10 +1,8 @@
-import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -13,7 +11,7 @@ public class Base {
     public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
 
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME,"13d56a3c");
+        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "13d56a3c");
 
         //if the application is given as an apk file
         //File appDir = new File("jars");
@@ -27,13 +25,12 @@ public class Base {
         //cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
 
         //cap.setCapability(MobileCapabilityType.APPLICATION_NAME,"com.google.android.calculator");
-        cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
+        cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 
 
-
-        cap.setCapability("appPackage","com.google.android.deskclock");
-        cap.setCapability("appActivity","com.android.deskclock.DeskClock");
-        AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
+        cap.setCapability("appPackage", "com.google.android.deskclock");
+        cap.setCapability("appActivity", "com.android.deskclock.DeskClock");
+        AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
 
 
         //driver.startActivity(calculatorActivity);
@@ -47,15 +44,15 @@ public class Base {
     public static AndroidDriver<AndroidElement> ApiDemoCapabilities() throws MalformedURLException {
 
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME,"13d56a3c");
-        cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
+        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "13d56a3c");
+        cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
         //if the application is given as an apk file
         //File appDir = new File("jars");
         //File app = new File(appDir, "original.apk");
 
         //cap.setCapability(MobileCapabilityType.APP,app.getAbsolutePath());
 
-        AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
+        AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
         System.out.println("Driver initiated");
         return driver;
 
@@ -64,10 +61,10 @@ public class Base {
     public static AndroidDriver<AndroidElement> BrowserCapabilities() throws MalformedURLException {
 
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME,"13d56a3c");
-        cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
-        cap.setCapability(MobileCapabilityType.BROWSER_NAME,"Chrome");
-        AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
+        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "13d56a3c");
+        cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
+        cap.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+        AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
         System.out.println("Driver initiated");
         return driver;
 
