@@ -1,3 +1,5 @@
+package javaClasses;
+
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
@@ -18,7 +20,7 @@ public class ApiDemos extends Base {
     public static void main(String[] args) throws MalformedURLException {
 
         driver = ApiDemoCapabilities();
-        driver.startActivity(new Activity("io.appium.android.apis","ApiDemos"));
+        driver.startActivity(new Activity("io.appium.android.apis","javaClasses.ApiDemos"));
 
         ApiDemos apiDemos = new ApiDemos();
         //apiDemos.longClick();
