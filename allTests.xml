@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="FirstRun">
+    <test name="TestRun">
+        <classes>
+            <class name="tests"/>
+            <class name="BikeLoan"/>
+        </classes>
+    </test>
+    <test name="Car Loan">
+        <classes>
+            <class name="CarLoan">
+                    <methods>
+                        <exclude name="car.*"/>
+                    </methods>
+            </class>
+            <class name="HouseLoan">
+                <methods>
+                    <include name="users"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

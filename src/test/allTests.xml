@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="FirstRun">
-    <test name="TestRun">
-        <classes>
-            <class name="tests"/>
-        </classes>
-    </test>
-</suite>
