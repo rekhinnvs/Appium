@@ -1,3 +1,4 @@
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
@@ -29,6 +30,11 @@ public class BikeLoan {
     public void parameterised(String url) {
         System.out.println("URL parameter : "+url);
 
+    }
+
+    @Test
+    public void testListner() {
+         Assert.assertTrue(false);
     }
 
 
