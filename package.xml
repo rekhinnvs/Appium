@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Running pakcages">
+    <listeners>
+        <listener class-name="Listners"/>
+    </listeners>
+    <test name="Package wise">
+        <parameter name="URL" value="facebook.com"/>
+        <packages>
+           <!-- <package name="package name"/> -->
+        </packages>
+
+        <classes>
+            <class name="BikeLoan"/>
+        </classes>
+    </test>
+</suite>

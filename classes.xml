@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Running Classes">
+    <test name="Package wise">
+        <classes>
+            <class name="CarLoan"/>
+            <!--<class name="BikeLoan"/>-->
+        </classes>
+
+    </test>
+</suite>

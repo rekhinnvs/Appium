@@ -8,7 +8,7 @@ If your chromedriver is an old one, update it with below command while launching
     appium --chromedriver-executable /path/to/my/chromedriver    
 If you are unable to launch downloaded chromedriver in mac, execute the below command
 
-    xattr -d com.apple.quarantine <name-of-executable
+    xattr -d com.apple.quarantine <name-of-executable>
 
 Different ways of finding objects
 
