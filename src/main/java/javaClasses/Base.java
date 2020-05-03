@@ -9,6 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Base {
+
     public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
 
         DesiredCapabilities cap = new DesiredCapabilities();

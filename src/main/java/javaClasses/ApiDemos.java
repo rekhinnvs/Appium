@@ -5,6 +5,8 @@ import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.WebElement;
+import pageObjects.AllApi;
+import pageObjects.HomePage;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
@@ -20,22 +22,31 @@ public class ApiDemos extends Base {
     public static void main(String[] args) throws MalformedURLException {
 
         driver = ApiDemoCapabilities();
-        driver.startActivity(new Activity("io.appium.android.apis","javaClasses.ApiDemos"));
+        driver.startActivity(new Activity("io.appium.android.apis","ApiDemos"));
 
         ApiDemos apiDemos = new ApiDemos();
-        //apiDemos.longClick();
+        apiDemos.longClick();
         //apiDemos.swipeTime();
         //apiDemos.scrolling();
-        apiDemos.drag();
+        //apiDemos.drag();
 
     }
 
     //Long click on an object
     private void longClick() {
-        driver.findElementByXPath("//android.widget.TextView[@text=\"Views\"]").click();
-        driver.findElementByXPath("//android.widget.TextView[@text=\"Expandable Lists\"]").click();
+        //driver.findElementByXPath("//android.widget.TextView[@text=\"Views\"]").click();
+
+        //Using pagefactory to declare the objects
+        HomePage homePage = new HomePage(driver);
+        homePage.views.click();
+
+        AllApi allApi = new AllApi(driver);
+        allApi.expendableList.click();
+
+        //driver.findElementByXPath("//android.widget.TextView[@text=\"Expandable Lists\"]").click();
         driver.findElementByXPath("//android.widget.TextView[@text=\"1. Custom Adapter\"]").click();
         //driver.findElementByXPath("(//android.widget.TextView)[0]").click();
+
 
         //Long click on People names
 
